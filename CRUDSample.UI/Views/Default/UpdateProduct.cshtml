@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+@using CRUDSample.UI
+@model Product
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ürün Güncelleme Sayfası</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm("UpdateProduct", "Default", FormMethod.Post))
+    {
+        @Html.HiddenFor(a=>a.ProductID)
+        <span>Urun Adi: </span> @Html.TextBoxFor(a => a.ProductName)
+        <br />
+        <span>Urun Kategori ID: </span> @Html.TextBoxFor(a => a.CategoryID)
+        <br />
+        <span>Urun Fiyati: </span> @Html.TextBoxFor(a => a.UnitsInStock)
+        <input type="submit" name="name" value="Urun Güncelle" />
+    }
+</body>
+</html>
+<script src="~/Scripts/bootstrap.js"></script>

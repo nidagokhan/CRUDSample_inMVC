@@ -1,0 +1,60 @@
+﻿
+@{
+    //c# kodlarının geliştirildiği yer.@=Razor => view Engine. 
+    Layout = null;
+    int i = 0;
+    string hede = "melike";
+}
+@using CRUDSample.UI
+@model List<Product>
+@*tupple, dto=>prop*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>hello MVC</h2>
+            @*@i
+            <br />
+            @hede*@
+            <br />
+            @Html.ActionLink("Anasayfa", "About", "Default")
+            <br />
+            @Html.ActionLink("Yeni Ürün Ekle","NewProduct","Default")
+            <table class="table table-responsive table-info table-active">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ürün Adı</th>
+                        <th>Ürün Fiyatı</th>
+                        <th>Ürün stok Miktarı</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ProductID</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.UnitPrice</td>
+                            <td>@item.UnitsInStock</td>
+                            <td>@Html.ActionLink("Düzenle", "UpdateProduct", new { id = item.ProductID })</td>
+                            <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ProductID })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/Scripts/bootstrap.js"></script>

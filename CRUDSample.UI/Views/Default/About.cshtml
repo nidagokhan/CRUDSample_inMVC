@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div> 
+        <h2>Hakkımızda</h2>
+        <br />
+        @Html.ActionLink("Anasayfa","Home","Default") 
+        @*not: mvc'de @HTML:Helper. toolbox burada html. dedğimiz alan. a href ihityacımız varsa ve bunu kodla yapmak isityorsak actionlink, form tag ihityaç varsa beginform, checkbox ihtiyaç varsa checbox yada checkbox for kullanırız. html. dan sonra açılan penceryi izle'*@
+    </div>
+</body>
+</html>
+<script src="~/Scripts/bootstrap.js"></script>
